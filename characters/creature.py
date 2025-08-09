@@ -61,6 +61,17 @@ class Creature:
         data = json.loads(json_str)
         return cls.from_dict(data)
 
+    def save(self, filename: str):
+        with open(filename, "w", encoding="utf-8") as f:
+            json.dump(self.to_dict(), f, indent=4)
+
+    # 🔹 Load from file
+    @classmethod
+    def load(cls, filename: str):
+        with open(filename, "r", encoding="utf-8") as f:
+            data = json.load(f)
+        return cls.from_dict(data)
+
     def greet(self):
         print(f"HP: {self.hp}")
         print(f"Stats: \n{self.stats}")
@@ -79,3 +90,12 @@ if __name__ == '__main__':
     loaded_creature = Creature.from_json(json_data)
     print(loaded_creature.hp_value("max_hp"))
     print(loaded_creature["STR"])
+
+    creature.save("creature.json")
+
+    # Load from file
+    loaded_creature = Creature.load("creature.json")
+
+    print("Loaded STR:", loaded_creature["STR"])
+    print("Loaded Max HP:", loaded_creature.hp_value("max_hp"))
+
