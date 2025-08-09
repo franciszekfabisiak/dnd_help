@@ -36,6 +36,9 @@ class HP:
         else:
             self.real_hp = min(self.real_hp, self.temp_hp)
 
+    def set_real(self, value: int):
+        self.real_hp = min(value, self.temp_hp)
+
     def set_max(self, value: int):
         self.max_hp = value
         self.temp_hp = value
