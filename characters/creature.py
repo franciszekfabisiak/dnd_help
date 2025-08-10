@@ -1,6 +1,6 @@
-from hp import HP
-from stats import Stats
-from resistances import Resistances
+from .hp import HP
+from .stats import Stats
+from .resistances import Resistances
 import json
 
 
@@ -13,21 +13,70 @@ class Creature:
         self.alive = alive
 
     # Delegated HP actions
-    def damage(self, amount: int, damage_type: str = "true"):
+    def damage(self, amount: int, damage_type: str = "true") -> dict:
+        """
+        Deal damage to the creature and return detailed results for the GUI.
+        """
+        result = {
+            "target": self.name,
+            "type": damage_type,
+            "initial_amount": amount,
+            "final_amount": 0,
+            "resist_multiplier": None,
+            "resist_bonus": None,
+            "absorbed_by_shield": 0,
+            "hp_lost": 0,
+            "remaining_hp": self.hp.real_hp,
+            "remaining_shield": self.hp.shield,
+            "healed_instead": False,
+            "dead": not self.alive
+        }
+
         damage_resist = self.get_resistance(damage_type)
+        result["resist_multiplier"] = damage_resist[0]
+        result["resist_bonus"] = damage_resist[1]
+
         if damage_resist[0] == -1:
-            self.heal(amount + damage_resist[1])
+            # Immune, heals instead
+            heal_amount = amount + damage_resist[1]
+            heal_result = self.heal(heal_amount)
+            result.update({
+                "healed_instead": True,
+                "heal_amount": heal_result["healed_amount"],
+                "remaining_hp": heal_result["remaining_hp"]
+            })
         else:
             amount = amount * damage_resist[0]
             if amount:
                 amount = amount + damage_resist[1]
-            self.hp.damage(amount)
+            result["final_amount"] = amount
+
+            dmg_result = self.hp.damage(amount)
+            result.update(dmg_result)
+
             if self.hp.real_hp == 0:
                 self.die()
+                result["dead"] = True
 
-    def heal(self, amount: int):
+        return result
+
+    def heal(self, amount: int) -> dict:
+        """
+        Heal the creature and return detailed results for the GUI.
+        """
         if self.alive:
-            self.hp.heal(amount)
+            heal_result = self.hp.heal(amount)
+            return {
+                "target": self.name,
+                "healed_amount": heal_result["healed_amount"],
+                "remaining_hp": heal_result["remaining_hp"]
+            }
+        else:
+            return {
+                "target": self.name,
+                "healed_amount": 0,
+                "remaining_hp": self.hp.real_hp
+            }
 
     def change_temp(self, amount: int):
         if self.alive:
@@ -48,6 +97,7 @@ class Creature:
 
     def die(self):
         self.alive = False
+        self.hp.real_hp = 0
 
     def resurrect(self):
         self.alive = True

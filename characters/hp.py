@@ -2,24 +2,50 @@ class HP:
     def __init__(self, max_hp: int = 1, real_hp: int = 1, temp_hp: int = 0, shield: int = 0):
         self.max_hp = max_hp
         self.real_hp = real_hp
-        if temp_hp <= 0:
+        if temp_hp == 0:
             self.temp_hp = self.max_hp
+        else:
+            self.temp_hp = temp_hp
         self.shield = shield
 
-    def damage(self, damage: int):
+    def damage(self, damage: int) -> dict:
         damage = max(damage, 0)
+        result = {
+            "initial_damage": damage,
+            "absorbed_by_shield": 0,
+            "hp_lost": 0,
+            "remaining_shield": self.shield,
+            "remaining_hp": self.real_hp,
+            "dead": False
+        }
 
         if self.shield > 0:
             absorbed = min(damage, self.shield)
             self.shield -= absorbed
             damage -= absorbed
+            result["absorbed_by_shield"] = absorbed
+            result["remaining_shield"] = self.shield
 
         if damage > 0:
+            hp_before = self.real_hp
             self.real_hp = max(self.real_hp - damage, 0)
+            result["hp_lost"] = hp_before - self.real_hp
+            result["remaining_hp"] = self.real_hp
+            if self.real_hp == 0:
+                result["dead"] = True
 
-    def heal(self, amount: int):
+        return result
+
+    def heal(self, amount: int) -> dict:
         amount = max(amount, 0)
+        hp_before = self.real_hp
         self.real_hp = min(self.real_hp + amount, self.max_hp)
+        healed_amount = self.real_hp - hp_before
+
+        return {
+            "healed_amount": healed_amount,
+            "remaining_hp": self.real_hp
+        }
 
     def change_temp(self, amount: int):
         self.temp_hp = max(self.temp_hp + amount, 0)
