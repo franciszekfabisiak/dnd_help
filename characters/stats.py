@@ -50,13 +50,3 @@ class Stats:
         mods = self.all_modifiers()
         return "\n".join(f"{stat}: {getattr(self, stat)} {mod:+}"
                          for stat, mod in mods.items())
-
-
-if __name__ == '__main__':
-    s = Stats()
-    print(s)
-
-    s.set_stat("STR", 18)
-    s.change_stat("CHA", -2)
-    print("\nAfter changes:")
-    print(s)

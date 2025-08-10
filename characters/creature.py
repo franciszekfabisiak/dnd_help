@@ -1,6 +1,6 @@
-from hp import HP
-from stats import Stats
-from resistances import Resistances
+from .hp import HP
+from .stats import Stats
+from .resistances import Resistances
 import json
 
 
