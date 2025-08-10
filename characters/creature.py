@@ -48,6 +48,7 @@ class Creature:
 
     def die(self):
         self.alive = False
+        self.hp.real_hp = 0
 
     def resurrect(self):
         self.alive = True

@@ -2,8 +2,10 @@ class HP:
     def __init__(self, max_hp: int = 1, real_hp: int = 1, temp_hp: int = 0, shield: int = 0):
         self.max_hp = max_hp
         self.real_hp = real_hp
-        if temp_hp <= 0:
+        if temp_hp == 0:
             self.temp_hp = self.max_hp
+        else:
+            self.temp_hp = temp_hp
         self.shield = shield
 
     def damage(self, damage: int):

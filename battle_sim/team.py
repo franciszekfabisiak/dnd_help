@@ -62,5 +62,5 @@ if __name__ == '__main__':
     team.save("party.json")
 
     # Load it later
-    loaded_team = Team.load("party.json")
+    loaded_team = Team.load("teams/party.json")
     print(len(loaded_team))
