@@ -169,12 +169,28 @@ class BattleGUI:
             except (TypeError, ValueError):
                 messagebox.showerror("Error", "Invalid damage value.")
                 return
+
             dmg_type = simpledialog.askstring("Damage Type", "Enter damage type (e.g., slashing, fire):")
             if not dmg_type:
                 return
-            target.damage(dmg_value, dmg_type)
+
+            result = target.damage(dmg_value, dmg_type)
             self.show_turn_order()
-            messagebox.showinfo("Done", f"{target.name} took {dmg_value} {dmg_type} damage.")
+
+            # Interpret the result
+            if result.get("healed_instead", False):
+                msg = (f"{result['target']} is immune to {dmg_type} damage and was healed "
+                       f"for {result['heal_amount']} HP (now at {result['remaining_hp']} HP).")
+            else:
+                absorbed = result.get("absorbed_by_shield", 0)
+                msg = (f"{result['target']} took {result['final_amount']} {dmg_type} damage")
+                if absorbed > 0:
+                    msg += f" ({absorbed} absorbed by shield)"
+                msg += f". {result['remaining_hp']} HP left."
+                if result.get("dead", False):
+                    msg += f" {result['target']} has died!"
+
+            messagebox.showinfo("Attack Result", msg)
             action_popup.destroy()
 
         def heal():
@@ -183,9 +199,13 @@ class BattleGUI:
             except (TypeError, ValueError):
                 messagebox.showerror("Error", "Invalid heal amount.")
                 return
-            target.heal(heal_value)
+
+            result = target.heal(heal_value)
             self.show_turn_order()
-            messagebox.showinfo("Done", f"{target.name} healed {heal_value} HP.")
+
+            msg = (f"{result['target']} healed for {result['healed_amount']} HP "
+                   f"(now at {result['remaining_hp']} HP).")
+            messagebox.showinfo("Heal Result", msg)
             action_popup.destroy()
 
         def resurrect():
