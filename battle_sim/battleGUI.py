@@ -3,6 +3,7 @@ from tkinter import simpledialog, messagebox
 from battle import Battle
 from characters.creature import Creature
 from team import Team
+from characters.bestiary import CREATURES_BY_NAME
 import os
 
 
@@ -36,24 +37,71 @@ class BattleGUI:
         self.interact_btn.pack()
 
     def add_creature(self, manual_init: bool = False):
-        name = simpledialog.askstring("Input", "Creature name:")
-        if name:
-            # For demo: create a simple Creature with default stats
-            c = Creature(name=name)
-            user_input = None
+        from characters.bestiary import CREATURES_BY_NAME  # dictionary of {name: class}
 
+        # Create popup window
+        top = tk.Toplevel()
+        top.title("Add Creature")
+        top.geometry("300x300")
+        top.grab_set()
+
+        label = tk.Label(top, text="Select a creature to add:")
+        label.pack(pady=5)
+
+        listbox = tk.Listbox(top, height=12)
+        for creature_name in sorted(CREATURES_BY_NAME.keys()):
+            listbox.insert(tk.END, creature_name)
+        listbox.pack(fill=tk.BOTH, expand=True, padx=10, pady=5)
+
+        def on_select():
+            try:
+                selection_index = listbox.curselection()[0]
+            except IndexError:
+                messagebox.showerror("Error", "Please select a creature.")
+                return
+
+            # Retrieve selected class
+            creature_name = listbox.get(selection_index)
+            creature_cls = CREATURES_BY_NAME[creature_name]
+
+            # Create temp instance to get type
+            temp_instance = creature_cls()
+            creature_type = getattr(temp_instance, "creature_type", "Unknown")
+
+            # Ask for name
+            custom_name = simpledialog.askstring(
+                "Creature Name",
+                f"Enter name for this {creature_type} (default: {creature_name}):"
+            )
+            if not custom_name:
+                custom_name = creature_name
+
+            # Final instance with chosen name
+            c = creature_cls(name=custom_name)
+
+            # Initiative (if required)
+            user_input = None
             if self.battle.battle_started and manual_init:
                 user_input = simpledialog.askstring(
                     "Initiative Roll",
                     f"Enter initiative roll for {c.name}: "
                 )
-                int(user_input)
+                int(user_input)  # validate int
 
+            # Add to battle
             self.battle.add_creature(c, user_input)
-            messagebox.showinfo("Added", f"{name} added.")
+            messagebox.showinfo("Added", f"{custom_name} ({creature_type}) added.")
+            self.show_turn_order()
+            top.destroy()
 
-            if self.battle.battle_started:
-                self.show_turn_order()
+        btn_frame = tk.Frame(top)
+        btn_frame.pack(pady=5)
+
+        select_btn = tk.Button(btn_frame, text="Add", command=on_select)
+        select_btn.pack(side=tk.LEFT, padx=5)
+
+        cancel_btn = tk.Button(btn_frame, text="Cancel", command=top.destroy)
+        cancel_btn.pack(side=tk.LEFT, padx=5)
 
     def roll_initiative(self, manual_init: bool = False):
         # Get creatures with default 0 initiatives
@@ -104,8 +152,9 @@ class BattleGUI:
         max_name_len = max(len(c.name) for c, _ in self.battle.turn_order)
 
         for idx, (creature, initiative) in enumerate(self.battle.turn_order, start=1):
-            line = (f"{idx:2}. {creature.name.ljust(max_name_len)}   Init: {initiative} HP: {creature.hp.real_hp}"
-                    f"/{creature.hp.max_hp}\n")
+            creature_type = f" ({creature.creature_type})" if hasattr(creature, "creature_type") else ""
+            line = (f"{idx:2}. {creature.name.ljust(max_name_len)}   Init: {str(initiative)} "
+                    f"HP: {creature.hp.real_hp}/{creature.hp.max_hp}{creature_type.rjust(5)}\n")
             if idx - 1 == self.battle.active_index:
                 self.turn_order_text.insert("end", line, "active")
             else:
@@ -286,6 +335,7 @@ class BattleGUI:
 
 # Assuming you have a Battle class already
 if __name__ == "__main__":
+    print(CREATURES_BY_NAME.keys())
     root = tk.Tk()
     battle = Battle()
     gui = BattleGUI(root, battle)

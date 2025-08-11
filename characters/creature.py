@@ -1,11 +1,12 @@
-from .hp import HP
-from .stats import Stats
-from .resistances import Resistances
+from characters.hp import HP
+from characters.stats import Stats
+from characters.resistances import Resistances
 import json
 
 
 class Creature:
-    def __init__(self, name: str, hp: HP = None, stats: Stats = None, resistances: Resistances = None, alive: bool = True):
+    def __init__(self, name: str, hp: HP = None, stats: Stats = None,
+                 resistances: Resistances = None, alive: bool = True):
         self.name = name
         self.hp = hp if hp is not None else HP()
         self.stats = stats if stats is not None else Stats()
