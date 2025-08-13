@@ -1,0 +1,261 @@
+{
+    "team name": "Zombie_stack",
+    "teammates": [
+        {
+            "name": "Ghoul1",
+            "alive": true,
+            "hp": {
+                "max_hp": 18,
+                "real_hp": 18,
+                "temp_hp": 18,
+                "shield": 0
+            },
+            "stats": {
+                "STR": 13,
+                "DEX": 15,
+                "CON": 10,
+                "WIS": 10,
+                "INT": 7,
+                "CHA": 6
+            },
+            "resistances": {
+                "true": {
+                    "mode": "normal",
+                    "flat_modifier": 0
+                },
+                "bludgeoning": {
+                    "mode": "normal",
+                    "flat_modifier": 0
+                },
+                "bludgeoning_magic": {
+                    "mode": "normal",
+                    "flat_modifier": 0
+                },
+                "piercing": {
+                    "mode": "normal",
+                    "flat_modifier": 0
+                },
+                "piercing_magic": {
+                    "mode": "normal",
+                    "flat_modifier": 0
+                },
+                "slashing": {
+                    "mode": "normal",
+                    "flat_modifier": 0
+                },
+                "slashing_magic": {
+                    "mode": "normal",
+                    "flat_modifier": 0
+                },
+                "acid": {
+                    "mode": "normal",
+                    "flat_modifier": 0
+                },
+                "acid_magic": {
+                    "mode": "normal",
+                    "flat_modifier": 0
+                },
+                "cold": {
+                    "mode": "normal",
+                    "flat_modifier": 0
+                },
+                "cold_magic": {
+                    "mode": "normal",
+                    "flat_modifier": 0
+                },
+                "fire": {
+                    "mode": "normal",
+                    "flat_modifier": 0
+                },
+                "fire_magic": {
+                    "mode": "normal",
+                    "flat_modifier": 0
+                },
+                "force": {
+                    "mode": "normal",
+                    "flat_modifier": 0
+                },
+                "force_magic": {
+                    "mode": "normal",
+                    "flat_modifier": 0
+                },
+                "lightning": {
+                    "mode": "normal",
+                    "flat_modifier": 0
+                },
+                "lightning_magic": {
+                    "mode": "normal",
+                    "flat_modifier": 0
+                },
+                "necrotic": {
+                    "mode": "normal",
+                    "flat_modifier": 0
+                },
+                "necrotic_magic": {
+                    "mode": "normal",
+                    "flat_modifier": 0
+                },
+                "poison": {
+                    "mode": "immune",
+                    "flat_modifier": 0
+                },
+                "poison_magic": {
+                    "mode": "immune",
+                    "flat_modifier": 0
+                },
+                "psychic": {
+                    "mode": "normal",
+                    "flat_modifier": 0
+                },
+                "psychic_magic": {
+                    "mode": "normal",
+                    "flat_modifier": 0
+                },
+                "radiant": {
+                    "mode": "normal",
+                    "flat_modifier": 0
+                },
+                "radiant_magic": {
+                    "mode": "normal",
+                    "flat_modifier": 0
+                },
+                "thunder": {
+                    "mode": "normal",
+                    "flat_modifier": 0
+                },
+                "thunder_magic": {
+                    "mode": "normal",
+                    "flat_modifier": 0
+                }
+            }
+        },
+        {
+            "name": "Ghoul2",
+            "alive": true,
+            "hp": {
+                "max_hp": 19,
+                "real_hp": 19,
+                "temp_hp": 19,
+                "shield": 0
+            },
+            "stats": {
+                "STR": 13,
+                "DEX": 15,
+                "CON": 10,
+                "WIS": 10,
+                "INT": 7,
+                "CHA": 6
+            },
+            "resistances": {
+                "true": {
+                    "mode": "normal",
+                    "flat_modifier": 0
+                },
+                "bludgeoning": {
+                    "mode": "normal",
+                    "flat_modifier": 0
+                },
+                "bludgeoning_magic": {
+                    "mode": "normal",
+                    "flat_modifier": 0
+                },
+                "piercing": {
+                    "mode": "normal",
+                    "flat_modifier": 0
+                },
+                "piercing_magic": {
+                    "mode": "normal",
+                    "flat_modifier": 0
+                },
+                "slashing": {
+                    "mode": "normal",
+                    "flat_modifier": 0
+                },
+                "slashing_magic": {
+                    "mode": "normal",
+                    "flat_modifier": 0
+                },
+                "acid": {
+                    "mode": "normal",
+                    "flat_modifier": 0
+                },
+                "acid_magic": {
+                    "mode": "normal",
+                    "flat_modifier": 0
+                },
+                "cold": {
+                    "mode": "normal",
+                    "flat_modifier": 0
+                },
+                "cold_magic": {
+                    "mode": "normal",
+                    "flat_modifier": 0
+                },
+                "fire": {
+                    "mode": "normal",
+                    "flat_modifier": 0
+                },
+                "fire_magic": {
+                    "mode": "normal",
+                    "flat_modifier": 0
+                },
+                "force": {
+                    "mode": "normal",
+                    "flat_modifier": 0
+                },
+                "force_magic": {
+                    "mode": "normal",
+                    "flat_modifier": 0
+                },
+                "lightning": {
+                    "mode": "normal",
+                    "flat_modifier": 0
+                },
+                "lightning_magic": {
+                    "mode": "normal",
+                    "flat_modifier": 0
+                },
+                "necrotic": {
+                    "mode": "normal",
+                    "flat_modifier": 0
+                },
+                "necrotic_magic": {
+                    "mode": "normal",
+                    "flat_modifier": 0
+                },
+                "poison": {
+                    "mode": "immune",
+                    "flat_modifier": 0
+                },
+                "poison_magic": {
+                    "mode": "immune",
+                    "flat_modifier": 0
+                },
+                "psychic": {
+                    "mode": "normal",
+                    "flat_modifier": 0
+                },
+                "psychic_magic": {
+                    "mode": "normal",
+                    "flat_modifier": 0
+                },
+                "radiant": {
+                    "mode": "normal",
+                    "flat_modifier": 0
+                },
+                "radiant_magic": {
+                    "mode": "normal",
+                    "flat_modifier": 0
+                },
+                "thunder": {
+                    "mode": "normal",
+                    "flat_modifier": 0
+                },
+                "thunder_magic": {
+                    "mode": "normal",
+                    "flat_modifier": 0
+                }
+            }
+        }
+    ]
+}

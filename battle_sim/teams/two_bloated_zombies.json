@@ -1,0 +1,261 @@
+{
+    "team name": "Zombie_stack",
+    "teammates": [
+        {
+            "name": "BloatedZombie1",
+            "alive": true,
+            "hp": {
+                "max_hp": 46,
+                "real_hp": 46,
+                "temp_hp": 46,
+                "shield": 0
+            },
+            "stats": {
+                "STR": 15,
+                "DEX": 5,
+                "CON": 16,
+                "WIS": 9,
+                "INT": 3,
+                "CHA": 5
+            },
+            "resistances": {
+                "true": {
+                    "mode": "normal",
+                    "flat_modifier": 0
+                },
+                "bludgeoning": {
+                    "mode": "resistant",
+                    "flat_modifier": 0
+                },
+                "bludgeoning_magic": {
+                    "mode": "resistant",
+                    "flat_modifier": 0
+                },
+                "piercing": {
+                    "mode": "vulnerable",
+                    "flat_modifier": 0
+                },
+                "piercing_magic": {
+                    "mode": "vulnerable",
+                    "flat_modifier": 0
+                },
+                "slashing": {
+                    "mode": "vulnerable",
+                    "flat_modifier": 0
+                },
+                "slashing_magic": {
+                    "mode": "vulnerable",
+                    "flat_modifier": 0
+                },
+                "acid": {
+                    "mode": "normal",
+                    "flat_modifier": 0
+                },
+                "acid_magic": {
+                    "mode": "normal",
+                    "flat_modifier": 0
+                },
+                "cold": {
+                    "mode": "normal",
+                    "flat_modifier": 0
+                },
+                "cold_magic": {
+                    "mode": "normal",
+                    "flat_modifier": 0
+                },
+                "fire": {
+                    "mode": "normal",
+                    "flat_modifier": 0
+                },
+                "fire_magic": {
+                    "mode": "normal",
+                    "flat_modifier": 0
+                },
+                "force": {
+                    "mode": "normal",
+                    "flat_modifier": 0
+                },
+                "force_magic": {
+                    "mode": "normal",
+                    "flat_modifier": 0
+                },
+                "lightning": {
+                    "mode": "normal",
+                    "flat_modifier": 0
+                },
+                "lightning_magic": {
+                    "mode": "normal",
+                    "flat_modifier": 0
+                },
+                "necrotic": {
+                    "mode": "normal",
+                    "flat_modifier": 0
+                },
+                "necrotic_magic": {
+                    "mode": "normal",
+                    "flat_modifier": 0
+                },
+                "poison": {
+                    "mode": "immune",
+                    "flat_modifier": 0
+                },
+                "poison_magic": {
+                    "mode": "immune",
+                    "flat_modifier": 0
+                },
+                "psychic": {
+                    "mode": "normal",
+                    "flat_modifier": 0
+                },
+                "psychic_magic": {
+                    "mode": "normal",
+                    "flat_modifier": 0
+                },
+                "radiant": {
+                    "mode": "normal",
+                    "flat_modifier": 0
+                },
+                "radiant_magic": {
+                    "mode": "normal",
+                    "flat_modifier": 0
+                },
+                "thunder": {
+                    "mode": "normal",
+                    "flat_modifier": 0
+                },
+                "thunder_magic": {
+                    "mode": "normal",
+                    "flat_modifier": 0
+                }
+            }
+        },
+        {
+            "name": "BloatedZombie2",
+            "alive": true,
+            "hp": {
+                "max_hp": 48,
+                "real_hp": 48,
+                "temp_hp": 48,
+                "shield": 0
+            },
+            "stats": {
+                "STR": 15,
+                "DEX": 5,
+                "CON": 16,
+                "WIS": 9,
+                "INT": 3,
+                "CHA": 5
+            },
+            "resistances": {
+                "true": {
+                    "mode": "normal",
+                    "flat_modifier": 0
+                },
+                "bludgeoning": {
+                    "mode": "resistant",
+                    "flat_modifier": 0
+                },
+                "bludgeoning_magic": {
+                    "mode": "resistant",
+                    "flat_modifier": 0
+                },
+                "piercing": {
+                    "mode": "vulnerable",
+                    "flat_modifier": 0
+                },
+                "piercing_magic": {
+                    "mode": "vulnerable",
+                    "flat_modifier": 0
+                },
+                "slashing": {
+                    "mode": "vulnerable",
+                    "flat_modifier": 0
+                },
+                "slashing_magic": {
+                    "mode": "vulnerable",
+                    "flat_modifier": 0
+                },
+                "acid": {
+                    "mode": "normal",
+                    "flat_modifier": 0
+                },
+                "acid_magic": {
+                    "mode": "normal",
+                    "flat_modifier": 0
+                },
+                "cold": {
+                    "mode": "normal",
+                    "flat_modifier": 0
+                },
+                "cold_magic": {
+                    "mode": "normal",
+                    "flat_modifier": 0
+                },
+                "fire": {
+                    "mode": "normal",
+                    "flat_modifier": 0
+                },
+                "fire_magic": {
+                    "mode": "normal",
+                    "flat_modifier": 0
+                },
+                "force": {
+                    "mode": "normal",
+                    "flat_modifier": 0
+                },
+                "force_magic": {
+                    "mode": "normal",
+                    "flat_modifier": 0
+                },
+                "lightning": {
+                    "mode": "normal",
+                    "flat_modifier": 0
+                },
+                "lightning_magic": {
+                    "mode": "normal",
+                    "flat_modifier": 0
+                },
+                "necrotic": {
+                    "mode": "normal",
+                    "flat_modifier": 0
+                },
+                "necrotic_magic": {
+                    "mode": "normal",
+                    "flat_modifier": 0
+                },
+                "poison": {
+                    "mode": "immune",
+                    "flat_modifier": 0
+                },
+                "poison_magic": {
+                    "mode": "immune",
+                    "flat_modifier": 0
+                },
+                "psychic": {
+                    "mode": "normal",
+                    "flat_modifier": 0
+                },
+                "psychic_magic": {
+                    "mode": "normal",
+                    "flat_modifier": 0
+                },
+                "radiant": {
+                    "mode": "normal",
+                    "flat_modifier": 0
+                },
+                "radiant_magic": {
+                    "mode": "normal",
+                    "flat_modifier": 0
+                },
+                "thunder": {
+                    "mode": "normal",
+                    "flat_modifier": 0
+                },
+                "thunder_magic": {
+                    "mode": "normal",
+                    "flat_modifier": 0
+                }
+            }
+        }
+    ]
+}

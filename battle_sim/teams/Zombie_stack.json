@@ -1,22 +1,22 @@
 {
-    "team name": "teamA",
+    "team name": "Zombie_stack",
     "teammates": [
         {
-            "name": "Erret",
+            "name": "Zombie1",
             "alive": true,
             "hp": {
-                "max_hp": 42,
-                "real_hp": 42,
-                "temp_hp": 42,
+                "max_hp": 25,
+                "real_hp": 25,
+                "temp_hp": 25,
                 "shield": 0
             },
             "stats": {
-                "STR": 7,
-                "DEX": 10,
+                "STR": 13,
+                "DEX": 6,
                 "CON": 16,
-                "WIS": 7,
-                "INT": 10,
-                "CHA": 10
+                "WIS": 6,
+                "INT": 3,
+                "CHA": 5
             },
             "resistances": {
                 "true": {
@@ -96,11 +96,11 @@
                     "flat_modifier": 0
                 },
                 "poison": {
-                    "mode": "normal",
+                    "mode": "immune",
                     "flat_modifier": 0
                 },
                 "poison_magic": {
-                    "mode": "normal",
+                    "mode": "immune",
                     "flat_modifier": 0
                 },
                 "psychic": {
@@ -130,21 +130,21 @@
             }
         },
         {
-            "name": "Brah",
+            "name": "Zombie2",
             "alive": true,
             "hp": {
-                "max_hp": 36,
-                "real_hp": 23,
-                "temp_hp": 36,
+                "max_hp": 21,
+                "real_hp": 21,
+                "temp_hp": 21,
                 "shield": 0
             },
             "stats": {
-                "STR": 10,
-                "DEX": 10,
-                "CON": 10,
-                "WIS": 10,
-                "INT": 10,
-                "CHA": 10
+                "STR": 13,
+                "DEX": 6,
+                "CON": 16,
+                "WIS": 6,
+                "INT": 3,
+                "CHA": 5
             },
             "resistances": {
                 "true": {
@@ -224,11 +224,11 @@
                     "flat_modifier": 0
                 },
                 "poison": {
-                    "mode": "normal",
+                    "mode": "immune",
                     "flat_modifier": 0
                 },
                 "poison_magic": {
-                    "mode": "normal",
+                    "mode": "immune",
                     "flat_modifier": 0
                 },
                 "psychic": {
@@ -258,21 +258,21 @@
             }
         },
         {
-            "name": "Ug",
+            "name": "Zombie3",
             "alive": true,
             "hp": {
-                "max_hp": 41,
-                "real_hp": 39,
-                "temp_hp": 41,
+                "max_hp": 15,
+                "real_hp": 15,
+                "temp_hp": 15,
                 "shield": 0
             },
             "stats": {
-                "STR": 10,
-                "DEX": 10,
-                "CON": 10,
-                "WIS": 10,
-                "INT": 10,
-                "CHA": 10
+                "STR": 13,
+                "DEX": 6,
+                "CON": 16,
+                "WIS": 6,
+                "INT": 3,
+                "CHA": 5
             },
             "resistances": {
                 "true": {
@@ -352,11 +352,11 @@
                     "flat_modifier": 0
                 },
                 "poison": {
-                    "mode": "normal",
+                    "mode": "immune",
                     "flat_modifier": 0
                 },
                 "poison_magic": {
-                    "mode": "normal",
+                    "mode": "immune",
                     "flat_modifier": 0
                 },
                 "psychic": {
@@ -386,21 +386,21 @@
             }
         },
         {
-            "name": "Ilo",
+            "name": "Zombie4",
             "alive": true,
             "hp": {
-                "max_hp": 60,
-                "real_hp": 53,
-                "temp_hp": 60,
+                "max_hp": 30,
+                "real_hp": 30,
+                "temp_hp": 30,
                 "shield": 0
             },
             "stats": {
-                "STR": 10,
-                "DEX": 10,
-                "CON": 10,
-                "WIS": 10,
-                "INT": 10,
-                "CHA": 10
+                "STR": 13,
+                "DEX": 6,
+                "CON": 16,
+                "WIS": 6,
+                "INT": 3,
+                "CHA": 5
             },
             "resistances": {
                 "true": {
@@ -480,11 +480,11 @@
                     "flat_modifier": 0
                 },
                 "poison": {
-                    "mode": "normal",
+                    "mode": "immune",
                     "flat_modifier": 0
                 },
                 "poison_magic": {
-                    "mode": "normal",
+                    "mode": "immune",
                     "flat_modifier": 0
                 },
                 "psychic": {

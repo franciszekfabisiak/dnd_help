@@ -37,7 +37,6 @@ class BattleGUI:
         self.interact_btn.pack()
 
     def add_creature(self, manual_init: bool = False):
-        from characters.bestiary import CREATURES_BY_NAME  # dictionary of {name: class}
 
         # Create popup window
         top = tk.Toplevel()

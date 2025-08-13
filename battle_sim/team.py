@@ -1,5 +1,6 @@
 from characters.creature import Creature
 import json
+from characters.bestiary import CREATURES_BY_NAME
 
 
 class Team:
@@ -51,15 +52,17 @@ class Team:
 
 
 if __name__ == '__main__':
-    c1 = Creature("A")
-    c2 = Creature("B")
-    c3 = Creature("F")
-    # Make a team
-    team = Team("teamA", [c1, c2])
-    team.add_creature(c3)
 
+    creature_cls = CREATURES_BY_NAME["BloatedZombie"]
+    temp_instance = creature_cls()
+    creature_type = getattr(temp_instance, "creature_type", "Unknown")
+    c1 = creature_cls(name="BloatedZombie1")
+    c2 = creature_cls(name="BloatedZombie2")
+
+    # Make a team
+    team = Team("Zombie_stack", [c1, c2])
     # Save it
-    team.save("party.json")
+    team.save("teams/two_bloated_zombies.json")
 
     # Load it later
     loaded_team = Team.load("teams/party.json")
